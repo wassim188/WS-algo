@@ -1,0 +1,25 @@
+ALGORITHM workshoop_algo 
+ VAR 
+     sentence:STRING; 
+     sentenceLength, wordsNbr, vowlesNbr , i :INTEGER := 0; 
+ BEGIN 
+     REPEAT 
+         WRITE ("enter a valid sentence"); 
+         READ (sentence); 
+     UNTIL (sentence = "") 
+     WHILE (sentence[i] <> ".") DO 
+         sentenceLength := sentenceLength + 1; 
+         IF (sentence[i] = "a" OR sentence[i] = "A" OR sentence[i] = "O" OR sentence[i] = "o" OR sentence[i] = "U" OR sentence[i] = "u"  OR sentence[i] = "Y" OR sentence[i] = "y" OR sentence[i] = "E" OR sentence[i] = "e" OR sentence[i] = "I" OR sentence[i] = "i") THEN 
+         vowlesNbr := vowlesNbr+1  
+         END_IF 
+         IF (sentence[i] = " " ) THEN 
+             wordsNbr := wordsNbr + 1 
+         END_IF 
+         i:= i + 1 
+     END_WHILE 
+         sentenceLength := sentenceLength +1  
+         IF (sentence[i-1] <> " ") THEN 
+             wordsNbr := wordsNbr +1; 
+         END_IF 
+     WRITE (sentenceLength, wordsNbr, vowlesNbr) 
+ END
